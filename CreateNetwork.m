@@ -1,3 +1,5 @@
+%Function to initialize parameters corresponding to Field/Energy/Sink
+%location
 function Network = CreateNetwork(Length, Width, Sink_x, Sink_y)
     Field.Type = 'Rect';
     %Length of the field
@@ -10,7 +12,13 @@ function Network = CreateNetwork(Length, Width, Sink_x, Sink_y)
     Sink.x = Sink_x;
     Sink.y = Sink_y;
     
-    %Initial Energy
+    % Following Values are Referred from:
+    % Li Qing, QingXin Zhu, Mingwen Wang
+    %Design of a distributed energy-efficient clustering algorithm for
+    %heterogeneous wireless sensor networks
+    %Elsevier, Computer communications 29(2006) 2230-2237
+    
+    %Initial Energy 
     Energy.InitEnergy = 0.5; 
      
     % Tranmitter energy
