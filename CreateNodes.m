@@ -11,7 +11,10 @@ function Nodes = CreateNodes(Network, NumNodes)
     
         % Set All Nodes are normal nodes initially
         Nodes.node(i).Type= 'N';
-    
+        
+        %Initially all nodes are eligible to become CH
+        Nodes.node(i).g=0;
+        
         %Initial Energy level assigned
         Nodes.node(i).Energy =Network.Energy.InitEnergy;
     

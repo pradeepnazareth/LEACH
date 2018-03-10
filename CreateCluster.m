@@ -11,7 +11,10 @@ NumCluster=1/p_NumCluster;
 
 ClusterModel.p=p;
 ClusterModel.NumCluster=NumCluster;
-Leach(ClusterModel,ClusterRound);
+[Nodes,CH] = Leach(ClusterModel,ClusterRound);
+
+ClusterModelNodes= Nodes;
+ClusterModel.CH=CH;
 
 
 
