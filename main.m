@@ -15,10 +15,9 @@ Network = CreateNetwork(Length,Width, Sink_x, Sink_y);
 %Create nodes & initialize parameters
 Nodes = CreateNodes(Network, NumNodes);
 Round=CreateRound();
-PlotField % Plot the WSN field/Nodes/Sink
 %for r=1:Round.NumRound
 
-for r=1:Round.NumRound
+for r=1:3
     ClusterModel=CreateCluster(Network,Nodes,'leach',r, p);
 end
 

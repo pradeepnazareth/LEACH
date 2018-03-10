@@ -11,8 +11,9 @@ NumCluster=1/p_NumCluster;
 
 ClusterModel.p=p;
 ClusterModel.NumCluster=NumCluster;
+Leach(ClusterModel,ClusterRound);
 
-addpath Cluster;
+
 
 
 end
