@@ -13,7 +13,7 @@ ClusterModel.p=p;
 ClusterModel.NumCluster=NumCluster;
 [Nodes,CH] = Leach(ClusterModel,ClusterRound);
 
-ClusterModelNodes= Nodes;
+ClusterModel.Nodes= Nodes;
 ClusterModel.CH=CH;
 
 
