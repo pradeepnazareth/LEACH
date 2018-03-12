@@ -3,7 +3,7 @@ clear all;
 close all;
 
 
-NumNodes=200; % Set Number of nodes
+NumNodes=100; % Set Number of nodes
 p=0.05; % Percentage of cluster heads
 Length=200; %Create network field  with length i.e x-axis
 Width=200; %Create network field  with width i.e. y-axis
@@ -17,10 +17,10 @@ Nodes = CreateNodes(Network, NumNodes);
 Round=CreateRound(); %Number of Rounds
 %for r=1:Round.NumRound
 
-for r=1:2
+for r=1:1077
     
     ClusterModel=CreateCluster(Network,Nodes,'leach',r, p);
-    EnergyCh(ClusterModel,Round);
+    ClusterModel=EnergyCh(ClusterModel,Round);
     
 end
 

@@ -18,20 +18,23 @@ EDA=Network.Energy.AggEnergy;
 PacketSize=Round.ChSinkPkt;
 
 for i=1:NoCh
-ChNo=ClusterHead.no(i);
+    ChNo=ClusterHead.no(i);
 
-distance = ClusterHead.distancetoBS(i);
-Energy=Nodes.node(ChNo).Energy;
-% Energy consumed by CH during data transmission to BS
-if (distance >d0)
-Nodes.node(ChNo).Energy=Energy -((ETX+EDA) * PacketSize + EMP * PacketSize * (distance ^ 4));
-else
-Nodes.node(ChNo).Energy=Energy -((ETX+EDA) * PacketSize + EFS * PacketSize * (distance ^ 2));
-end
+    distance = ClusterHead.distancetoBS(i);
+    Energy=Nodes.node(ChNo).Energy;
+    % Energy consumed by CH during data transmission to BS
+    if (distance >d0)
+    Nodes.node(ChNo).Energy=Energy -((ETX+EDA) * PacketSize + ...
+    EMP * PacketSize * (distance ^ 4));
+    else
+    Nodes.node(ChNo).Energy=Energy -((ETX+EDA) * PacketSize + ...
+    EFS * PacketSize * (distance ^ 2));
+    end
 % Energy consumed by CH in receivinh data from cluster member
-Nodes.node(chNo).Energy = Nodes.node(chNo).Energy - PacketSize*ERX *round(Nodes.NumNodes/ClusterModel.NumCluster);
+Nodes.node(ChNo).Energy = Nodes.node(ChNo).Energy - ...
+PacketSize*ERX *round(Nodes.NumNodes/ClusterModel.NumCluster);
 end
-ClusterMode.Nodes=Nodes;
+ClusterModel.Nodes=Nodes;
 end
 
 
@@ -39,5 +42,4 @@ end
 
 
 
-end
 

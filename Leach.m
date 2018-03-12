@@ -37,7 +37,7 @@ Nodes.NumDead=sum(Nodes.dead); %count number of dead nodes
 for i=1:n
     %disp(i);
     RandomNumber=rand;
-    Tn=(1/(1-p*(mod(r,round(1/p)))));
+    Tn=(p/(1-p*(mod(r,round(1/p)))));
     
    % Following condition should be satisfied to select as CH
     if ((Nodes.node(i).Energy) > 0 )
