@@ -15,12 +15,20 @@ Network = CreateNetwork(Length,Width, Sink_x, Sink_y);
 %Create nodes & initialize parameters
 Nodes = CreateNodes(Network, NumNodes);
 Round=CreateRound(); %Number of Rounds
-%for r=1:Round.NumRound
 
-for r=1:1077
+
+%for r=1:Round.NumRound
+for r=1:200
     
-    ClusterModel=CreateCluster(Network,Nodes,'leach',r, p);
+   
+    ClusterModel=CreateCluster(Network,Nodes,r, p);
+    [Nodes,CH] = Leach(ClusterModel,r);
+    ClusterModel.Nodes= Nodes;
+    ClusterModel.CH=CH;       
     ClusterModel=EnergyCh(ClusterModel,Round);
+   % ClusterModel=EnergyNonCh(ClusterterModel,Round); 
+    
+    Nodes=ClusterModel.Nodes
     
 end
 

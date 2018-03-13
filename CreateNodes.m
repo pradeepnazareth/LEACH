@@ -17,6 +17,10 @@ function Nodes = CreateNodes(Network, NumNodes)
         
         %Initial Energy level assigned
         Nodes.node(i).Energy =Network.Energy.InitEnergy;
+        %% Additional Code to fault detection
+        Nodes.node(i).CHTimes=0;
+        Nodes.node(i).Treshold=0;
+        Nodes.node(i).Random=0;
     
         % Cluster head of ith node, initially no cluster head
         Nodes.node(i).CH = -1;

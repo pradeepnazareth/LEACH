@@ -4,6 +4,8 @@ ClusterHead=ClusterModel.CH;
 Nodes= ClusterModel.Nodes;
 Network=ClusterModel.Network;
 
+
+
 d0=sqrt(Network.Energy.FreeSpace/Network.Energy.MultiPath);
 NoCh=length(ClusterHead.no);
 
@@ -33,6 +35,7 @@ for i=1:NoCh
 % Energy consumed by CH in receivinh data from cluster member
 Nodes.node(ChNo).Energy = Nodes.node(ChNo).Energy - ...
 PacketSize*ERX *round(Nodes.NumNodes/ClusterModel.NumCluster);
+
 end
 ClusterModel.Nodes=Nodes;
 end
