@@ -18,7 +18,7 @@ Round=CreateRound(); %Number of Rounds
 
 
 %for r=1:Round.NumRound
-for r=1:200
+for r=1:40
     
    
     ClusterModel=CreateCluster(Network,Nodes,r, p);
@@ -26,9 +26,9 @@ for r=1:200
     ClusterModel.Nodes= Nodes;
     ClusterModel.CH=CH;       
     ClusterModel=EnergyCh(ClusterModel,Round);
-   % ClusterModel=EnergyNonCh(ClusterterModel,Round); 
+    ClusterModel=EnergyNonCh(ClusterModel,Round); 
     
-    Nodes=ClusterModel.Nodes
+    Nodes=ClusterModel.Nodes;
     
 end
 

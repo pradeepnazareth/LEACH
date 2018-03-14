@@ -22,9 +22,9 @@ function Network = CreateNetwork(Length, Width, Sink_x, Sink_y)
     Energy.InitEnergy = 0.5; 
      
     % Tranmitter energy
-    Energy.TxEnergy = 50 * (10 ^ (-12)); 
+    Energy.TxEnergy = 5 * (10 ^ (-9)); 
     %Receiver energy
-    Energy.RxEnergy = 50 *  (10 ^ (-12)); 
+    Energy.RxEnergy = 5 *  (10 ^ (-9)); 
      
     %Free Space energy
     Energy.FreeSpace = 10*(10 ^ (-12));
